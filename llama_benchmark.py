@@ -1,3 +1,4 @@
+# copy from https://github.com/hpcaitech/ColossalAI/blob/main/examples/language/llama/benchmark.py
 import argparse
 import resource
 import time
