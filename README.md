@@ -3,8 +3,12 @@ We can use tensorboard and pytorch-profile to see the trace, GPU kernel and memo
 
 Command of benchmark.py:
 
+For simple node：
 
 torchrun --standalone --nproc_per_node 8 benchmark.py --profile
+
+For multiple nodes：
+
 
 torchrun --nnodes 2 --node_rank=0 --master_addr=10.20.1.170 --nproc_per_node 8  benchmark.py -p 3d -b 20  -s 10   --zero 2 --use_fp8 -g -x --profile
 
