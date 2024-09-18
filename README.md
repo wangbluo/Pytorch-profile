@@ -17,6 +17,7 @@ torchrun --nnodes 2 --node_rank=1 --master_addr=10.20.1.170 --nproc_per_node 8  
 
 colossalai run --nproc_per_node 8 --hostfile hostfile  benchmark.py -p 3d -b 20  -s 10 --zero 2 --use_fp8 -g -x --profile
 
+Make sure the SSH password-less link between the machines should be build first.
 
 
 ## Use tensorboard:
