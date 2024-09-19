@@ -7,6 +7,7 @@ For simple node：
 
 torchrun --standalone --nproc_per_node 8 benchmark.py --profile
 
+
 For multiple nodes：
 
 
