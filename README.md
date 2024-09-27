@@ -5,27 +5,27 @@ Command of benchmark.py :
 
 For simple node：
 
-torchrun --standalone --nproc_per_node 8 benchmark.py --profile
+```torchrun --standalone --nproc_per_node 8 benchmark.py --profile```
 
 
 For multiple nodes：
 
 
-torchrun --nnodes 2 --node_rank=0 --master_addr=10.20.1.170 --nproc_per_node 8  benchmark.py -p 3d -b 20  -s 10   --zero 2 --use_fp8 -g -x --profile
+```torchrun --nnodes 2 --node_rank=0 --master_addr=10.20.1.170 --nproc_per_node 8  benchmark.py -p 3d -b 20  -s 10   --zero 2 --use_fp8 -g -x --profile``` 
 
-torchrun --nnodes 2 --node_rank=1 --master_addr=10.20.1.170 --nproc_per_node 8  benchmark.py -p 3d -b 20  -s 10   --zero 2 --use_fp8 -g -x --profile
+```torchrun --nnodes 2 --node_rank=1 --master_addr=10.20.1.170 --nproc_per_node 8  benchmark.py -p 3d -b 20  -s 10   --zero 2 --use_fp8 -g -x --profile``` 
 
-
-colossalai run --nproc_per_node 8 --hostfile hostfile  benchmark.py -p 3d -b 20  -s 10 --zero 2 --use_fp8 -g -x --profile
+or:
+```colossalai run --nproc_per_node 8 --hostfile hostfile  benchmark.py -p 3d -b 20  -s 10 --zero 2 --use_fp8 -g -x --profile```
 
 Make sure the SSH password-less link between the machines should be build first.
 
 
 ## Use tensorboard:
 
-tensorboard --logdir=/home/nvme-share/home/wangbinluo/ColossalAI/examples/language/llama/profile/
+```tensorboard --logdir=/home/nvme-share/home/wangbinluo/ColossalAI/examples/language/llama/profile/``` 
 
-ssh -L 6006:localhost:6006 wangbinluo@211.102.192.100 -p 30956
+```ssh -L 6006:localhost:6006 wangbinluo@211.102.192.100 -p 30956``` 
 
 ## Result:
 ![img_v3_02ej_81920f5e-cb94-4000-a4d0-ad8ea1dcfd4g](https://github.com/user-attachments/assets/be8b59c2-050b-46d3-ad3c-cf39dfa49935)
