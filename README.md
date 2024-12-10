@@ -20,6 +20,10 @@ or:
 
 Make sure the SSH password-less link between the machines should be build first.
 
+## Environment
+
+pip install torch_tb_profiler
+
 
 ## Use tensorboard:
 
