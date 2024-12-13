@@ -359,7 +359,17 @@ def main():
                 prof.step()
     performance_evaluator.on_fit_end()
     coordinator.print_on_master(f"Max CUDA memory usage: {get_accelerator().max_memory_allocated()/1024**2:.2f} MB")
+"""from torch.profiler import ProfilerActivity, profile, schedule, tensorboard_trace_handler
 
+    with torch.profiler.profile(
+            activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA],
+            schedule=torch.profiler.schedule(wait=0, warmup=1, active=1, repeat=1),
+            on_trace_ready=torch.profiler.tensorboard_trace_handler("./profiler1"),
+            with_stack=True,
+        ) as prof:
+        for _ in range(start_step, num_steps_per_epoch):
+            ...
+            prof.step()"""
 
 if __name__ == "__main__":
     main()
